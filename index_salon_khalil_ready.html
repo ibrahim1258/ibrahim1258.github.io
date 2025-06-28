@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صالون الخليل إبراهيم</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #222; color: #fff; margin: 0; line-height:1.6; }
+    header { background: #000; padding: 20px; text-align: center; }
+    header h1 { margin: 0; color: #ffd700; }
+    section { padding: 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #ffd700; }
+    .services { display: flex; flex-wrap:wrap; justify-content: space-around; }
+    .service { background: #333; margin: 10px; padding: 15px; border-radius:8px; width: 45%; }
+    .price { color: #ffd700; }
+    form { background: #333; padding:20px; border-radius:8px; }
+    input, select { width: 100%; padding:10px; margin:10px 0; border:none; border-radius:4px; }
+    button { background: #ffd700; color:#000; padding: 10px 20px; border:none; border-radius:4px; font-size:16px; cursor:pointer; }
+    button:hover { background: #e6c200; }
+    .confirmation { background: #444; padding: 15px; border-radius:6px; margin-top:10px; display:none; }
+    footer { background: #000; text-align: center; padding: 15px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>صالون الخليل إبراهيم</h1>
+    <p>23 Damanhour, Ezbet Saad, Sidi Gaber, Alexandria</p>
+  </header>
+
+  <section id="home">
+    <h2>مرحباً بكم في صالون الخليل إبراهيم</h2>
+    <p>أفضل خدمات الحلاقة والتجميل الرجالي بأسعار مميزة، احجز الآن واستمتع بأفضل خدمة.</p>
+  </section>
+
+  <section id="services">
+    <h2>الخدمات والأسعار</h2>
+    <div class="services">
+      <div class="service"><h3>حلاقة رجالي</h3><p class="price">80 جنيه</p></div>
+      <div class="service"><h3>حلاقة الذقن</h3><p class="price">50 جنيه</p></div>
+      <div class="service"><h3>استشوار</h3><p class="price">70 جنيه</p></div>
+      <div class="service"><h3>صبغة</h3><p class="price">70 جنيه</p></div>
+      <div class="service"><h3>ماسك</h3><p class="price">20 جنيه</p></div>
+      <div class="service"><h3>عرض الدلع كله</h3><p class="price">250 جنيه</p></div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>حجز موعد</h2>
+    <form id="bookingForm">
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" required />
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" required />
+      <label for="time">اختيار الوقت:</label>
+      <select id="time" required>
+        <option value="6 مساءً">6 مساءً</option>
+        <option value="7 مساءً">7 مساءً</option>
+        <option value="8 مساءً">8 مساءً</option>
+        <option value="9 مساءً">9 مساءً</option>
+        <option value="10 مساءً">10 مساءً</option>
+      </select>
+      <button type="submit">حجز الآن</button>
+      <div class="confirmation" id="confirmation">
+        شكراً لك! تم استلام طلبك، وسنتواصل معك قريباً.
+      </div>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>معلومات التواصل</h2>
+    <p>العنوان: 23 Damanhour, Ezbet Saad, Sidi Gaber, Alexandria</p>
+    <p>واتساب: 01208317007</p>
+    <div id="map">
+      <iframe
+        src="https://www.google.com/maps?q=23%20Damanhour%2C%20Ezbet%20Saad%2C%20Sidi%20Gaber%2C%20Alexandria&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 صالون الخليل إبراهيم. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('confirmation').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
